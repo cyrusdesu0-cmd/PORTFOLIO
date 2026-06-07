@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman — Full Stack 3D Web Developer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">AM<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-hire">Hire Me</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+      <h1 class="hero-title">
+        <span class="line">I craft</span>
+        <span class="line italic">immersive</span>
+        <span class="line">3D web worlds</span>
+      </h1>
+      <p class="hero-sub">Full Stack Developer & 3D Web Specialist<br/>Building experiences beyond the flat screen.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-ghost">Let's Talk →</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Years Exp.</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Clients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Three.js</span><span class="dot">◆</span>
+      <span>React</span><span class="dot">◆</span>
+      <span>Node.js</span><span class="dot">◆</span>
+      <span>WebGL</span><span class="dot">◆</span>
+      <span>GLSL Shaders</span><span class="dot">◆</span>
+      <span>Next.js</span><span class="dot">◆</span>
+      <span>MongoDB</span><span class="dot">◆</span>
+      <span>GSAP</span><span class="dot">◆</span>
+      <span>Blender</span><span class="dot">◆</span>
+      <span>PostgreSQL</span><span class="dot">◆</span>
+      <span>Three.js</span><span class="dot">◆</span>
+      <span>React</span><span class="dot">◆</span>
+      <span>Node.js</span><span class="dot">◆</span>
+      <span>WebGL</span><span class="dot">◆</span>
+      <span>GLSL Shaders</span><span class="dot">◆</span>
+      <span>Next.js</span><span class="dot">◆</span>
+      <span>MongoDB</span><span class="dot">◆</span>
+      <span>GSAP</span><span class="dot">◆</span>
+      <span>Blender</span><span class="dot">◆</span>
+      <span>PostgreSQL</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label">// ABOUT ME</div>
+          <h2 class="about-heading">
+            Developer.<br/>
+            <span class="italic">Creator.</span><br/>
+            Dimension-bender.
+          </h2>
+          <div class="about-image-wrap">
+            <div class="about-img-placeholder">
+              <canvas id="aboutCanvas"></canvas>
+              <div class="img-overlay-text">AMAN</div>
+            </div>
+            <div class="about-tag tag-1">Full Stack</div>
+            <div class="about-tag tag-2">3D / WebGL</div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p class="about-bio">
+            Hey! I'm <strong>Aman</strong>, a full-stack developer who lives at the intersection of code and spatial design. I build immersive 3D web experiences that feel alive — not just websites, but <em>worlds</em>.
+          </p>
+          <p class="about-bio">
+            From WebGL shaders to REST APIs, from Three.js scenes to database architecture — I handle the full stack with equal obsession for performance and aesthetics.
+          </p>
+          <div class="about-details">
+            <div class="detail-row">
+              <span class="detail-label">Location</span>
+              <span class="detail-val">Gurugram, India 🇮🇳</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Focus</span>
+              <span class="detail-val">3D Web, Full Stack, Interactive</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Status</span>
+              <span class="detail-val available">● Open to opportunities</span>
+            </div>
+          </div>
+          <div class="about-ctas">
+            <a href="resume.pdf" download class="btn-primary">Download CV</a>
+            <a href="https://github.com/yourusername" target="_blank" class="btn-outline">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// SELECTED WORK</div>
+        <h2 class="section-title">Projects that<br/><span class="italic">push limits</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card featured" data-index="01">
+          <div class="project-visual">
+            <canvas class="project-canvas" data-color="#ff6b35"></canvas>
+          </div>
+          <div class="project-info">
+            <span class="project-num">01</span>
+            <h3 class="project-title">3D Product Configurator</h3>
+            <p class="project-desc">Real-time WebGL product viewer with GLSL shaders, PBR materials, and dynamic lighting. Built for an e-commerce client.</p>
+            <div class="project-tags">
+              <span>Three.js</span><span>React</span><span>GLSL</span><span>Node.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-live">Live Demo ↗</a>
+              <a href="#" class="link-code">Code →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-index="02">
+          <div class="project-visual">
+            <canvas class="project-canvas" data-color="#7c3aed"></canvas>
+          </div>
+          <div class="project-info">
+            <span class="project-num">02</span>
+            <h3 class="project-title">Immersive Portfolio Engine</h3>
+            <p class="project-desc">A CMS-driven portfolio platform with 3D transitions and WebGL backgrounds. SaaS for creative agencies.</p>
+            <div class="project-tags">
+              <span>Next.js</span><span>WebGL</span><span>MongoDB</span><span>GSAP</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-live">Live Demo ↗</a>
+              <a href="#" class="link-code">Code →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-index="03">
+          <div class="project-visual">
+            <canvas class="project-canvas" data-color="#10b981"></canvas>
+          </div>
+          <div class="project-info">
+            <span class="project-num">03</span>
+            <h3 class="project-title">Real-time 3D Dashboard</h3>
+            <p class="project-desc">Analytics dashboard with 3D data visualizations, live WebSocket updates, and spatial data mapping.</p>
+            <div class="project-tags">
+              <span>React</span><span>D3.js</span><span>Three.js</span><span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-live">Live Demo ↗</a>
+              <a href="#" class="link-code">Code →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-index="04">
+          <div class="project-visual">
+            <canvas class="project-canvas" data-color="#f59e0b"></canvas>
+          </div>
+          <div class="project-info">
+            <span class="project-num">04</span>
+            <h3 class="project-title">Multiplayer 3D Experience</h3>
+            <p class="project-desc">Browser-based multiplayer 3D environment with real-time physics, Socket.io sync, and procedural generation.</p>
+            <div class="project-tags">
+              <span>Three.js</span><span>Socket.io</span><span>Node.js</span><span>Cannon.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-live">Live Demo ↗</a>
+              <a href="#" class="link-code">Code →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div class="work-footer">
+        <a href="https://github.com/yourusername" target="_blank" class="btn-outline">See all on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// SKILLS & TOOLS</div>
+        <h2 class="section-title">My tech<br/><span class="italic">arsenal</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="cat-title">3D & Graphics</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span class="skill-name">Three.js</span><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">WebGL / GLSL</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Blender</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">React Three Fiber</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">GSAP / Animation</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="cat-title">Frontend</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span class="skill-name">React / Next.js</span><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">HTML / CSS / JS</span><div class="skill-bar"><div class="skill-fill" style="--w:98%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Tailwind CSS</span><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Vue.js</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="cat-title">Backend & DB</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span class="skill-name">Node.js / Express</span><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">MongoDB</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">REST / GraphQL</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Docker / AWS</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tools-row">
+        <span class="tool-badge">Git</span>
+        <span class="tool-badge">Figma</span>
+        <span class="tool-badge">VS Code</span>
+        <span class="tool-badge">Postman</span>
+        <span class="tool-badge">Vercel</span>
+        <span class="tool-badge">Netlify</span>
+        <span class="tool-badge">Firebase</span>
+        <span class="tool-badge">Prisma</span>
+        <span class="tool-badge">Redux</span>
+        <span class="tool-badge">Zustand</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <canvas id="contactCanvas"></canvas>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-label light">// GET IN TOUCH</div>
+        <h2 class="contact-heading">
+          Let's build something<br/>
+          <span class="italic">extraordinary</span> together.
+        </h2>
+        <p class="contact-sub">Have a project in mind? A 3D experience to craft? I'm all ears — and all code.</p>
+        <div class="contact-actions">
+          <a href="mailto:aman@email.com" class="btn-primary-light">aman@email.com</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
+          <span class="social-sep">·</span>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
+          <span class="social-sep">·</span>
+          <a href="https://twitter.com/yourusername" target="_blank" class="social-link">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Aman — Full Stack 3D Developer</span>
+      <span class="footer-copy">© 2025. Built with passion & WebGL.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
